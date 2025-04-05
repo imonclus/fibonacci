@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci y Espiral Logarítmica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #fcdb00;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #111;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        section h2 {
+            font-size: 2em;
+            color: #111;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        section p {
+            font-size: 1.1em;
+            color: #333;
+            text-align: justify;
+        }
+        .golden-ratio {
+            font-size: 1.5em;
+            color: #fcdb00;
+            font-weight: bold;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #fcdb00;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #111;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            color: #fcdb00;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            section h2 {
+                font-size: 1.5em;
+            }
+            section p {
+                font-size: 1em;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            .image-container {
+                max-width: 100%;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Serie de Fibonacci y Espiral Logarítmica</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="numero_aureo.html">El Número Áureo</a></li>
+                <li><a href="arte_arquitectura.html">Arte y Arquitectura</a></li>
+                <li><a href="naturaleza.html">En la Naturaleza</a></li>
+                <li><a href="divina_proporcion.html">La Divina Proporción</a></li>
+                <li><a href="patron_naturaleza.html">Un Patrón de la Naturaleza</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Serie de Fibonacci</h2>
+            <p>
+                La serie de Fibonacci es una secuencia de números enteros, donde cada
+                número es la suma de los dos anteriores. Comienza con 0 y 1, y la
+                secuencia continúa así:
+            </p>
+            <p>
+                0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+            </p>
+            <p>
+                Matemáticamente, la serie se define por la siguiente relación de
+                recurrencia:
+            </p>
+            <p>
+                F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub>
+            </p>
+            <p>
+                donde F<sub>0</sub> = 0 y F<sub>1</sub> = 1.
+            </p>
+            <p>
+                Esta serie fue descrita por primera vez por Leonardo Pisano, también
+                conocido como Fibonacci, en su libro Liber Abaci (1202). Fibonacci
+                la introdujo para resolver un problema sobre la cría de conejos.
+            </p>
+            <p>
+                Una propiedad notable de la serie de Fibonacci es su relación con el
+                número áureo (φ). A medida que n se acerca al infinito, la proporción
+                entre dos números de Fibonacci consecutivos (F<sub>n</sub> / F<sub>n-1</sub>)
+                se aproxima a φ. Esto se puede expresar como:
+            </p>
+            <p>
+                lim<sub>n→∞</sub> (F<sub>n</sub> / F<sub>n-1</sub>) = φ
+            </p>
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Nautilus_of_Fibonacci.gif" alt="Espiral de Fibonacci">
+            </div>
+
+            <h2>Espiral Logarítmica</h2>
+            <p>
+                Una espiral logarítmica es una espiral cuya distancia desde el origen
+                aumenta exponencialmente a medida que se gira alrededor de él. Es
+                autosimilar, lo que significa que su forma no cambia al cambiar de
+                escala.
+            </p>
+             <p>
+                En una espiral logarítmica, el radio de la espiral aumenta en proporción geométrica
+                con el ángulo de rotación. Esto puede expresarse matemáticamente como:
+            </p>
+            <p>
+                 r = a * e^(bθ)
+            </p>
+            <p>
+                donde:
+            </p>
+            <ul>
+                 <li>r es el radio de la espiral</li>
+                 <li>θ es el ángulo de rotación en radianes</li>
+                 <li>a y b son constantes que determinan la forma de la espiral</li>
+                 <li>e es la base del logaritmo natural</li>
+            </ul>
+            <p>
+                La espiral logarítmica está estrechamente relacionada con el número áureo
+                y la serie de Fibonacci. Si se construye una serie de rectángulos donde
+                la longitud de cada lado corresponde a los números de Fibonacci, y se
+                traza un arco circular dentro de cada cuadrado, se forma una espiral
+                que se aproxima a la espiral logarítmica. Esta espiral se conoce como
+                la espiral áurea.
+            </p>
+            <p>
+                La relación entre la espiral logarítmica y el número áureo se puede
+                derivar de la ecuación de la espiral. La constante b en la ecuación
+                r = a * e^(bθ) está relacionada con el número áureo por la ecuación:
+            </p>
+            <p>
+                b = ln(φ) / (π/2)
+            </p>
+            <p>
+                donde ln(φ) es el logaritmo natural de φ.
+            </p>
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Fibonacci_Spiral.svg" alt="Espiral áurea">
+            </div>
+            <p>
+                La espiral logarítmica se encuentra en diversas formas naturales, como
+                las conchas de los moluscos, los cuernos de algunos animales y los
+                brazos de las galaxias espirales. Su presencia en la naturaleza
+                sugiere que desempeña un papel importante en el crecimiento y la
+                organización de los sistemas biológicos y físicos.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 La Proporción Áurea</p>
+    </footer>
+</body>
+</html>
