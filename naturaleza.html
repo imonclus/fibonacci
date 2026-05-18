@@ -7,126 +7,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.7;
-        }
-        header {
-            background-color: #fcdb00;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #111;
-        }
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        section {
-            margin-bottom: 50px;
-        }
-        section h2 {
-            font-size: 2em;
-            color: #111;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        section p {
-            font-size: 1.1em;
-            color: #333;
-            text-align: justify;
-        }
-        .golden-ratio {
-            font-size: 1.5em;
-            color: #fcdb00;
-            font-weight: bold;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            width: 100%; /* Asegura que el contenedor de la imagen se ajuste al ancho de la sección */
-            overflow: hidden;  /* Recorta cualquier parte de la imagen que exceda el contenedor */
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 5px solid #fcdb00;
-            border-radius: 8px;
-            display: block; /* Elimina el espacio extra debajo de la imagen */
-        }
-
-        footer {
-            background-color: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #111;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
-        nav ul li a:hover {
-            color: #fcdb00;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2em;
-            }
-            section h2 {
-                font-size: 1.5em;
-            }
-            section p {
-                font-size: 1em;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            .image-container {
-                max-width: 100%; /* Asegura que las imágenes no se desborden en pantallas pequeñas */
-            }
-            .image-container img {
-                max-width: 100%; /* Hace que las imágenes se ajusten al ancho del contenedor en pantallas pequeñas */
-                height: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>La Proporción Áurea</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="numero_aureo.html">El Número Áureo</a></li>
                 <li><a href="arte_arquitectura.html">Arte y Arquitectura</a></li>
-                <li><a href="naturaleza.html">En la Naturaleza</a></li>
+                <li><a href="naturaleza.html" class="active">En la Naturaleza</a></li>
                 <li><a href="divina_proporcion.html">La Divina Proporción</a></li>
                 <li><a href="patron_naturaleza.html">Un Patrón de la Naturaleza</a></li>
+                <li><a href="actividades.html">Actividades</a></li>
             </ul>
         </nav>
     </header>
@@ -160,7 +56,7 @@
                 optimizando el espacio y la exposición al sol.
             </p>
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Espiral_de_semillas_de_Girasol.jpg" alt="Girasol con espirales de Fibonacci">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Espiral_de_semillas_de_Girasol.jpg" alt="Girasol con espirales de Fibonacci" loading="lazy">
             </div>
             <p>
                 <strong>Conchas de Moluscos:</strong>
@@ -173,7 +69,7 @@
                 una estructura resistente.
             </p>
             <div class="image-container">
-                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Nautilus_sp.2_-_Concha.JPG" alt="Concha de Nautilus">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Nautilus_sp.2_-_Concha.JPG" alt="Concha de Nautilus" loading="lazy">
             </div>
             <p>
                 <strong>Galaxias Espirales:</strong>
@@ -185,7 +81,7 @@
                 y el núcleo de la galaxia.
             </p>
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wide_Field_Imager_view_of_a_Milky_Way_look-alike_NGC_6744.jpg/1024px-Wide_Field_Imager_view_of_a_Milky_Way_look-alike_NGC_6744.jpg" alt="Galaxia Espiral">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wide_Field_Imager_view_of_a_Milky_Way_look-alike_NGC_6744.jpg/1024px-Wide_Field_Imager_view_of_a_Milky_Way_look-alike_NGC_6744.jpg" alt="Galaxia Espiral" loading="lazy">
             </div>
             <p>
                 <strong>Plantas y Animales:</strong>
@@ -197,12 +93,14 @@
                  vasos sanguíneos.
             </p>
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/CLM_14456_70v71r.jpg" alt="Proporción áurea en animales">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/CLM_14456_70v71r.jpg" alt="Proporción áurea en animales" loading="lazy">
             </div>
         </section>
     </main>
     <footer>
         <p>© 2025 La Proporción Áurea</p>
     </footer>
+    <a href="#" class="back-to-top" title="Volver arriba">↑</a>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,247 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.7;
+}
+header {
+    background-color: #fcdb00;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #111;
+}
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+section {
+    margin-bottom: 50px;
+}
+section h2 {
+    font-size: 2em;
+    color: #111;
+    margin-bottom: 20px;
+    text-align: center;
+}
+section p {
+    font-size: 1.1em;
+    color: #333;
+    text-align: justify;
+}
+.golden-ratio {
+    font-size: 1.5em;
+    color: #fcdb00;
+    font-weight: bold;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #fcdb00;
+    border-radius: 8px;
+    display: block;
+}
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+nav ul li a:hover {
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    section p {
+        font-size: 1em;
+    }
+        .menu-icon {
+            display: block;
+            font-size: 2em;
+            cursor: pointer;
+            margin-top: 10px;
+            user-select: none;
+        }
+        nav ul {
+            display: none; /* Oculta el menú por defecto en móviles */
+        }
+        .menu-toggle:checked ~ nav ul {
+            display: block; /* Muestra el menú al tocar el icono */
+        }
+    nav ul li {
+        display: block;
+            margin: 15px 0;
+    }
+    .image-container {
+        max-width: 100%;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+nav ul li a.active {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 6px; /* Separa un poco el subrayado del texto */
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fcdb00;
+    color: #111;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background-color: #111;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Estilos para las actividades interactivas */
+.activity-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 30px;
+    text-align: center;
+    border-top: 5px solid #fcdb00;
+}
+.activity-box h3 {
+    margin-top: 0;
+}
+.activity-box input {
+    padding: 10px;
+    font-size: 1.1em;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+}
+.activity-box button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #fcdb00;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+.activity-box button:hover {
+    background-color: #111;
+    color: #fff;
+}
+#activity-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Estilos para el cuestionario (quiz) */
+.quiz-question {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.quiz-question h4 {
+    margin-top: 0;
+    color: #111;
+}
+.quiz-question label {
+    display: inline-block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+#quiz-result {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quiz-section-title {
+    font-size: 1.4em;
+    color: #111;
+    border-bottom: 3px solid #fcdb00;
+    margin: 40px auto 20px auto;
+    padding-bottom: 10px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.correct-answer {
+    color: #2e7d32; /* Verde oscuro */
+}
+.incorrect-answer {
+    color: #d32f2f; /* Rojo oscuro */
+}
