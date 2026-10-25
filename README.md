@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # La Proporción Áurea y la Sucesión de Fibonacci
 
 Este es un proyecto web educativo e interactivo diseñado para explorar en profundidad el fascinante mundo del **Número Áureo (Φ)** y su estrecha relación con la **Sucesión de Fibonacci**.
@@ -80,5 +79,4 @@ Al ser un proyecto estático, no requiere de una base de datos ni procesos de co
 Proyecto escolar / educativo creado para la divulgación de las matemáticas, el arte y la naturaleza.
 
 ---
->>>>>>> 5a99c22e9d936fff3173f8dfd6e4acbeec63b255
 © 2025 La Proporción Áurea.
