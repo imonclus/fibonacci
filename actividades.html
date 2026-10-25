@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - La Proporción Áurea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>La Proporción Áurea</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="numero_aureo.html">El Número Áureo</a></li>
+                <li><a href="arte_arquitectura.html">Arte y Arquitectura</a></li>
+                <li><a href="naturaleza.html">En la Naturaleza</a></li>
+                <li><a href="divina_proporcion.html">La Divina Proporción</a></li>
+                <li><a href="patron_naturaleza.html">Un Patrón de la Naturaleza</a></li>
+                <li><a href="actividades.html" class="active">Actividades</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Actividades Interactivas</h2>
+            <p>Pon a prueba tus conocimientos sobre la sucesión de Fibonacci con esta herramienta interactiva construida con HTML5 y JavaScript.</p>
+            
+            <div class="activity-box">
+                <h3>Generador de Fibonacci</h3>
+                <p>Introduce una posición (N) para calcular el número de Fibonacci correspondiente en la secuencia:</p>
+                <input type="number" id="fiboInput" min="0" max="1000" placeholder="Ej. 10">
+                <button onclick="calcularFibonacci()">Calcular</button>
+                <div id="activity-result"></div>
+            </div>
+
+            <div class="activity-box" id="spiral-activity">
+                <h3>Generador de la Espiral de Durero</h3>
+                <p>Configura el número de iteraciones para dibujar la espiral logarítmica. Observa cómo se van añadiendo los rectángulos áureos que forman este patrón natural.</p>
+                
+                <div style="margin: 20px 0;">
+                    <label for="spiralInput" style="font-weight: 600; font-size: 1.1em; margin-right: 10px;">Iteraciones (1 a 15):</label>
+                    <input type="number" id="spiralInput" min="1" max="15" value="8" onchange="dibujarEspiral()">
+                    <button onclick="dibujarEspiral()">Dibujar</button>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border: 2px solid #ddd; border-radius: 8px; overflow: hidden; max-width: 100%; display: flex; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
+                    <canvas id="spiralCanvas" width="600" height="400" style="max-width: 100%; height: auto; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></canvas>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>Documental: La magia de los números</h3>
+                <p>Antes de enfrentarte al cuestionario, te invitamos a ver este excelente episodio de la serie "Más por menos" de RTVE dedicado a Fibonacci y la proporción áurea:</p>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px; border: 2px solid #fcdb00;">
+                    <iframe src="https://www.rtve.es/drmn/embed/video/1291572" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>Vídeo: El Número Áureo y Fibonacci</h3>
+                <p>También puedes visualizar este interesante vídeo para seguir profundizando en la Proporción Áurea y la sucesión de Fibonacci:</p>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px; border: 2px solid #fcdb00;">
+                    <iframe src="https://www.youtube-nocookie.com/embed/B6ztvqvZTsk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>Cuestionario de Conocimientos</h3>
+                <p>Demuestra lo que has aprendido respondiendo a estas preguntas:</p>
+                
+                <h4 class="quiz-section-title">Parte 1: Historia y Contexto</h4>
+
+                <div class="quiz-question">
+                    <h4>1.- ¿Quiénes poblaban la Península Ibérica durante la Edad Media? (Elige todas las respuestas correctas)</h4>
+                    <label><input type="checkbox" value="a" class="q1"> a) Los Cristianos.</label><br>
+                    <label><input type="checkbox" value="b" class="q1"> b) Los Romanos.</label><br>
+                    <label><input type="checkbox" value="c" class="q1"> c) Los Árabes.</label><br>
+                    <label><input type="checkbox" value="d" class="q1"> d) Los Judíos.</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>2.- ¿Cuál va a ser el lugar de encuentro de los sabios durante el Siglo XIII?</h4>
+                    <label><input type="radio" name="q2" value="a"> a) Córdoba</label><br>
+                    <label><input type="radio" name="q2" value="b"> b) Toledo.</label><br>
+                    <label><input type="radio" name="q2" value="c"> c) Granada</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>3.- Leonardo fue educado por un tutor árabe en los secretos del cálculo posicional Hindú.</h4>
+                    <label><input type="radio" name="q3" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q3" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>4.- Leonardo tomó contacto con los matemáticos más notables de la época en su propia ciudad.</h4>
+                    <label><input type="radio" name="q4" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q4" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>5.- Leonardo conoció el teorema de Pitágoras en uno de sus viajes y lo tomó como modelo.</h4>
+                    <label><input type="radio" name="q5" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q5" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>6.- ¿En qué libro aparecen por primera vez en occidente las nueve cifras hindúes y el signo del cero?</h4>
+                    <label><input type="radio" name="q6" value="a"> a) En un antiguo tratado árabe.</label><br>
+                    <label><input type="radio" name="q6" value="b"> b) En el Liber abaci.</label><br>
+                    <label><input type="radio" name="q6" value="c"> c) En los "Elementos" de Euclides.</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>7.- Si las cifras y nuestro sistema de numeración, son hindúes, ¿Por qué se le llama sistema Arábigo-hindu?</h4>
+                    <label><input type="radio" name="q7" value="a"> a) Porque lo inventaron los Hindues.</label><br>
+                    <label><input type="radio" name="q7" value="b"> b) Porque lo difundieron los Árabes y lo inventaron los Hindues.</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>8.- ¿Por qué quiso Fibonacci introducir su sistema de numeración en Europa?</h4>
+                    <label><input type="radio" name="q8" value="a"> a) Porque era un mandato del Papa y la Iglesia.</label><br>
+                    <label><input type="radio" name="q8" value="b"> b) Porque era mucho más práctico y eficiente para el comercio que los números romanos.</label><br>
+                    <label><input type="radio" name="q8" value="c"> c) Porque quería mantener sus cálculos en secreto usando un sistema extranjero.</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>9.- ¿Sobre qué material se realizaban los cálculos en el Siglo XV?</h4>
+                    <label><input type="radio" name="q9" value="a"> a) En tablillas de arcilla o pergaminos muy costosos.</label><br>
+                    <label><input type="radio" name="q9" value="b"> b) Principalmente en ábacos o tableros de cálculo con fichas, aunque el uso del papel para el cálculo escrito empezaba a popularizarse.</label><br>
+                    <label><input type="radio" name="q9" value="c"> c) Exclusivamente en las primeras calculadoras mecánicas de engranajes.</label>
+                </div>
+
+                <h4 class="quiz-section-title">Parte 2: La Sucesión y sus Propiedades</h4>
+
+                <div class="quiz-question">
+                    <h4>10.- Recuerda la sucesión de Fibonacci vista en el vídeo y completa los términos que faltan:<br><br>1, 1, 2, ___ , 5, 8, ___ , 21, 34, 55, 89, ___ , 233, 377, 610, ___ , 1597, 2584, ___ , 6765, 10946, ...</h4>
+                    <label><input type="radio" name="q10" value="a"> a) 3, 13, 144, 987, 4181</label><br>
+                    <label><input type="radio" name="q10" value="b"> b) 4, 12, 144, 887, 4281</label><br>
+                    <label><input type="radio" name="q10" value="c"> c) 3, 15, 154, 987, 4181</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>11.- En la sucesión de Fibonacci, cada término se obtiene sumando los dos anteriores.</h4>
+                    <label><input type="radio" name="q11" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q11" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>12.- Si multiplicamos dos términos impares consecutivos obtenemos el término intermedio al cuadrado menos uno.</h4>
+                    <label><input type="radio" name="q12" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q12" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>13.- Si multiplicamos dos términos pares consecutivos obtenemos el término intermedio al cuadrado menos uno.</h4>
+                    <label><input type="radio" name="q13" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q13" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>14.- En 1202, Leonardo de Pisa utilizó su famosa sucesión para modelar matemáticamente... ¿qué fenómeno natural?</h4>
+                    <label><input type="radio" name="q14" value="a"> a) La disposición de las hojas en los árboles (filotaxis).</label><br>
+                    <label><input type="radio" name="q14" value="b"> b) El crecimiento de una población idealizada de conejos.</label><br>
+                    <label><input type="radio" name="q14" value="c"> c) La reproducción de las abejas melíferas.</label>
+                </div>
+
+                <h4 class="quiz-section-title">Parte 3: Geometría y la Espiral de Durero</h4>
+
+                <div class="quiz-question">
+                    <h4>15.- Para construir la espiral de Durero, el primer paso es dibujar un rectángulo de 1x2.</h4>
+                    <label><input type="radio" name="q15" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q15" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>16.- En el segundo paso de la construcción de la espiral, se añade un rectángulo de 1x2.</h4>
+                    <label><input type="radio" name="q16" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q16" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>17.- En el tercer paso de la construcción, se añade un cuadrado de 3x3.</h4>
+                    <label><input type="radio" name="q17" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q17" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>18.- La espiral de Durero se obtiene uniendo con líneas rectas los vértices de los cuadrados.</h4>
+                    <label><input type="radio" name="q18" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q18" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>19.- La espiral de Durero es un patrón que se encuentra fácilmente en la naturaleza.</h4>
+                    <label><input type="radio" name="q19" value="v"> Verdadero</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="q19" value="f"> Falso</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>20.- Si divides cualquier número de Fibonacci entre el número anterior (por ejemplo, 34 &divide; 21), el resultado se acerca cada vez más a 1.61803... ¿Con qué nombre se conoce a este número?</h4>
+                    <input type="text" id="q20" placeholder="Escribe tu respuesta..." style="padding: 8px; font-size: 1em; border: 1px solid #ccc; border-radius: 4px; width: 90%; max-width: 400px; box-sizing: border-box;">
+                </div>
+
+                <button onclick="evaluarQuiz()">Evaluar</button>
+                <div id="quiz-result"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 La Proporción Áurea</p>
+    </footer>
+    <a href="#" class="back-to-top" title="Volver arriba">↑</a>
+    <script src="script.js"></script>
+    <script>
+        function calcularFibonacci() {
+            const n = parseInt(document.getElementById('fiboInput').value);
+            const resultDiv = document.getElementById('activity-result');
+            if (isNaN(n) || n < 0) { resultDiv.innerHTML = "<span style='color:red;'>Por favor, introduce un número válido (0 o mayor).</span>"; return; }
+            let a = 0, b = 1, temp;
+            for (let i = 2; i <= n; i++) { temp = a + b; a = b; b = temp; }
+            resultDiv.innerHTML = `El número de Fibonacci en la posición <strong>${n}</strong> es:<br><span style='font-size: 1.5em; color: #fcdb00; text-shadow: 1px 1px 2px #000;'>${n === 0 ? 0 : (n === 1 ? 1 : b)}</span>`;
+        }
+
+        function evaluarQuiz() {
+            let score = 0;
+            let resultHTML = "";
+
+            // Evaluación de la Pregunta 1 (Respuestas correctas: a, c, d)
+            const q1a = document.querySelector('input.q1[value="a"]').checked;
+            const q1b = document.querySelector('input.q1[value="b"]').checked;
+            const q1c = document.querySelector('input.q1[value="c"]').checked;
+            const q1d = document.querySelector('input.q1[value="d"]').checked;
+
+            if (q1a && !q1b && q1c && q1d) {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 1:</strong> ¡Correcto! Cristianos, árabes y judíos convivieron en la Península Ibérica.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 1:</strong> Incorrecto. Las respuestas correctas eran a) Los Cristianos, c) Los Árabes y d) Los Judíos.</p>";
+            }
+
+            // Evaluación de la Pregunta 2 (Respuesta correcta: b)
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            if (q2 && q2.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 2:</strong> ¡Correcto! Toledo fue el gran punto de encuentro de sabios.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 2:</strong> Incorrecto. La respuesta correcta es b) Toledo.</p>";
+            }
+
+            // Evaluación de la Pregunta 3 (Respuesta correcta: v - Verdadero)
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            if (q3 && q3.value === "v") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 3:</strong> ¡Correcto! Leonardo aprendió este sistema en el norte de África.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 3:</strong> Incorrecto. La respuesta correcta es Verdadero.</p>";
+            }
+
+            // Evaluación de la Pregunta 4 (Respuesta correcta: f - Falso)
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            if (q4 && q4.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 4:</strong> ¡Correcto! Viajó intensamente por todo el Mediterráneo para conocer a otros sabios, no se quedó en Pisa.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 4:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 5 (Respuesta correcta: f - Falso)
+            const q5 = document.querySelector('input[name="q5"]:checked');
+            if (q5 && q5.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 5:</strong> ¡Correcto! Su gran inspiración y modelo fue el sistema numérico hindú-árabe, no Pitágoras.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 5:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 6 (Respuesta correcta: b)
+            const q6 = document.querySelector('input[name="q6"]:checked');
+            if (q6 && q6.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 6:</strong> ¡Correcto! Aparecieron en occidente por primera vez en su famoso 'Liber abaci'.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 6:</strong> Incorrecto. La respuesta correcta es b) En el Liber abaci.</p>";
+            }
+
+            // Evaluación de la Pregunta 7 (Respuesta correcta: b)
+            const q7 = document.querySelector('input[name="q7"]:checked');
+            if (q7 && q7.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 7:</strong> ¡Correcto! Los hindúes lo crearon, pero fueron los estudiosos árabes quienes lo introdujeron en Europa.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 7:</strong> Incorrecto. La respuesta correcta es b) Porque lo difundieron los Árabes y lo inventaron los Hindues.</p>";
+            }
+
+            // Evaluación de la Pregunta 8 (Respuesta correcta: b)
+            const q8 = document.querySelector('input[name="q8"]:checked');
+            if (q8 && q8.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 8:</strong> ¡Correcto! Al ser hijo de un comerciante, vio que calcular con el sistema hindú-árabe (incluyendo el cero) era infinitamente superior para la contabilidad que usar los torpes números romanos.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 8:</strong> Incorrecto. La respuesta correcta es b) Porque era mucho más práctico y eficiente para el comercio que los números romanos.</p>";
+            }
+
+            // Evaluación de la Pregunta 9 (Respuesta correcta: b)
+            const q9 = document.querySelector('input[name="q9"]:checked');
+            if (q9 && q9.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 9:</strong> ¡Correcto! Los comerciantes usaban tableros de cálculo (ábacos), pero gracias a los números introducidos por Fibonacci y la mayor disponibilidad de papel, los cálculos algorítmicos escritos fueron ganando terreno rápidamente.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 9:</strong> Incorrecto. La respuesta correcta es b) Principalmente en ábacos o tableros de cálculo con fichas, aunque el uso del papel para el cálculo escrito empezaba a popularizarse.</p>";
+            }
+
+            // Evaluación de la Pregunta 10 (Respuesta correcta: a)
+            const q10 = document.querySelector('input[name="q10"]:checked');
+            if (q10 && q10.value === "a") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 10:</strong> ¡Correcto! Los números que faltan se obtienen sumando siempre los dos anteriores (1+2=3; 5+8=13; 55+89=144; 377+610=987; 1597+2584=4181).</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 10:</strong> Incorrecto. La respuesta correcta es a) 3, 13, 144, 987, 4181.</p>";
+            }
+
+            // Evaluación de la Pregunta 11 (Respuesta correcta: v)
+            const q11 = document.querySelector('input[name="q11"]:checked');
+            if (q11 && q11.value === "v") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 11:</strong> ¡Correcto! Es la regla fundamental matemática con la que se construye toda la sucesión.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 11:</strong> Incorrecto. La respuesta correcta es Verdadero.</p>";
+            }
+
+            // Evaluación de la Pregunta 12 (Respuesta correcta: f)
+            const q12 = document.querySelector('input[name="q12"]:checked');
+            if (q12 && q12.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 12:</strong> ¡Correcto! Según la Identidad de Cassini, para posiciones impares se obtiene el término intermedio al cuadrado <strong>MÁS</strong> uno (ej: el 3º y 5º término son 2 y 5. 2x5 = 10, que es igual a 3² + 1).</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 12:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 13 (Respuesta correcta: v)
+            const q13 = document.querySelector('input[name="q13"]:checked');
+            if (q13 && q13.value === "v") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 13:</strong> ¡Correcto! Es una de las propiedades de la Identidad de Cassini (ej: el 4º y 6º término son 3 y 8. 3x8 = 24, que es igual a 5² - 1).</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 13:</strong> Incorrecto. La respuesta correcta es Verdadero.</p>";
+            }
+
+            // Evaluación de la Pregunta 14 (Respuesta correcta: b)
+            const q14 = document.querySelector('input[name="q14"]:checked');
+            if (q14 && q14.value === "b") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 14:</strong> ¡Correcto! Fibonacci planteó el famoso problema de cuántas parejas de conejos se producirían en un año a partir de una pareja inicial, bajo condiciones ideales de reproducción.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 14:</strong> Incorrecto. La respuesta correcta es b) El crecimiento de una población idealizada de conejos.</p>";
+            }
+
+            // Evaluación de la Pregunta 15 (Respuesta correcta: f)
+            const q15 = document.querySelector('input[name="q15"]:checked');
+            if (q15 && q15.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 15:</strong> ¡Correcto! La construcción se inicia con un cuadrado de 1x1.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 15:</strong> Incorrecto. La respuesta correcta es Falso, se parte de un cuadrado 1x1.</p>";
+            }
+
+            // Evaluación de la Pregunta 16 (Respuesta correcta: f)
+            const q16 = document.querySelector('input[name="q16"]:checked');
+            if (q16 && q16.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 16:</strong> ¡Correcto! En el segundo paso se añade otro cuadrado de 1x1.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 16:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 17 (Respuesta correcta: f)
+            const q17 = document.querySelector('input[name="q17"]:checked');
+            if (q17 && q17.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 17:</strong> ¡Correcto! En el tercer paso se añade un cuadrado de 2x2.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 17:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 18 (Respuesta correcta: f)
+            const q18 = document.querySelector('input[name="q18"]:checked');
+            if (q18 && q18.value === "f") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 18:</strong> ¡Correcto! La espiral se obtiene trazando arcos de un cuarto de círculo dentro de cada cuadrado.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 18:</strong> Incorrecto. La respuesta correcta es Falso.</p>";
+            }
+
+            // Evaluación de la Pregunta 19 (Respuesta correcta: v)
+            const q19 = document.querySelector('input[name="q19"]:checked');
+            if (q19 && q19.value === "v") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 19:</strong> ¡Correcto! Es uno de los patrones más comunes en la naturaleza, visible en conchas, girasoles, galaxias, etc.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 19:</strong> Incorrecto. La respuesta correcta es Verdadero.</p>";
+            }
+
+            // Evaluación de la Pregunta 20 (Campo de texto libre)
+            const q20Input = document.getElementById('q20');
+            const q20Val = q20Input ? q20Input.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
+            if (q20Val === "numero aureo" || q20Val === "el numero aureo" || q20Val === "proporcion divina" || q20Val === "la proporcion divina" || q20Val === "proporcion aurea" || q20Val === "phi" || q20Val === "numero phi") {
+                score++;
+                resultHTML += "<p class='correct-answer'><strong>Pregunta 20:</strong> ¡Correcto! A este valor se le conoce como Número Áureo o Proporción Divina.</p>";
+            } else {
+                resultHTML += "<p class='incorrect-answer'><strong>Pregunta 20:</strong> Incorrecto. La respuesta correcta es el Número Áureo (o Proporción Divina).</p>";
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.innerHTML = `<h4 style="color: #111; margin-top: 15px;">Tu puntuación: ${score} / 20</h4>` + resultHTML;
+        }
+
+        function dibujarEspiral() {
+            const input = document.getElementById('spiralInput');
+            let iter = parseInt(input.value);
+            const canvas = document.getElementById('spiralCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+
+            ctx.clearRect(0, 0, width, height);
+            
+            if (isNaN(iter) || iter < 1) return;
+            
+            // Limitamos a 15 iteraciones para que no se desborde visualmente
+            iter = Math.min(iter, 15);
+            input.value = iter; 
+
+            let fibs = [1, 1];
+            for (let i = 2; i < iter; i++) {
+                fibs.push(fibs[i-1] + fibs[i-2]);
+            }
+
+            ctx.save();
+            
+            // Escala dinámica para asegurar que la espiral quepa en el canvas
+            let maxFib = fibs[iter - 1];
+            let scale = Math.min(width, height) / (maxFib * 2.5); 
+            if (iter <= 3) scale = 40;
+            
+            ctx.translate(width / 2, height / 2);
+            ctx.rotate(-Math.PI / 2); // Orientación inicial para que crezca hacia afuera adecuadamente
+
+            for (let i = 0; i < iter; i++) {
+                let f = fibs[i] * scale;
+                
+                // Dibujar el cuadrado
+                ctx.beginPath();
+                ctx.strokeStyle = '#ccc';
+                ctx.lineWidth = 1;
+                ctx.rect(0, 0, f, f);
+                ctx.stroke();
+                
+                // Dibujar el arco de la espiral
+                ctx.beginPath();
+                ctx.strokeStyle = '#fcdb00';
+                ctx.lineWidth = 3;
+                ctx.arc(0, f, f, 1.5 * Math.PI, 0, false);
+                ctx.stroke();
+                
+                // Trasladar al siguiente vértice y rotar 90 grados en cada paso
+                ctx.translate(f, f);
+                ctx.rotate(Math.PI / 2);
+            }
+            
+            ctx.restore();
+        }
+
+        // Dibujar la espiral por defecto al cargar la página
+        window.addEventListener('DOMContentLoaded', function() {
+            if(document.getElementById('spiralCanvas')) {
+                dibujarEspiral();
+            }
+        });
+    </script>
+</body>
+</html>
