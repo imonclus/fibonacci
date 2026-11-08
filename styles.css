@@ -7,20 +7,89 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bg-color, #f4f4f4);
+    color: var(--text-color, #333);
     line-height: 1.7;
+    transition: background-color 0.3s, color 0.3s;
 }
 header {
-    background-color: #fcdb00;
+    background-color: var(--header-bg, #fcdb00);
     padding: 20px;
     text-align: center;
+    position: relative;
+    transition: background-color 0.3s;
 }
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #111;
+    color: var(--header-text, #111);
 }
+
+/* Variables para el Dark Mode */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: #222;
+    --header-text: #fcdb00;
+    --activity-bg: #2d2d2d;
+    --nav-text: #fcdb00;
+}
+
+body.dark-mode section h2,
+body.dark-mode .quiz-section-title,
+body.dark-mode .quiz-question h4,
+body.dark-mode .activity-box h3,
+body.dark-mode #quiz-result h4 {
+    color: #fcdb00 !important;
+}
+
+body.dark-mode section p {
+    color: #ccc;
+}
+
+body.dark-mode nav ul li a {
+    color: var(--nav-text);
+}
+body.dark-mode nav ul li a.active {
+    color: #fff;
+}
+body.dark-mode nav ul li a:hover {
+    color: #fff;
+}
+body.dark-mode .activity-box,
+body.dark-mode .quiz-question {
+    background: var(--activity-bg);
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+/* Botón Dark Mode */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid var(--header-text, #111);
+    color: var(--header-text, #111);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.dark-mode-toggle:hover {
+    background: var(--header-text, #111);
+    color: var(--header-bg, #fcdb00);
+}
+body.dark-mode .dark-mode-toggle {
+    border-color: #fcdb00;
+    color: #fcdb00;
+}
+body.dark-mode .dark-mode-toggle:hover {
+    background: #fcdb00;
+    color: #222;
+}
+
 main {
     padding: 20px;
     max-width: 900px;
@@ -127,6 +196,19 @@ nav ul li a:hover {
         max-width: 100%;
         height: auto;
     }
+
+    /* Mejoras para las cajas interactivas en móviles */
+    .activity-box {
+        padding: 20px 15px;
+    }
+    .activity-box input {
+        width: 100%;
+        margin: 0 0 10px 0;
+        box-sizing: border-box;
+    }
+    .activity-box button {
+        width: 100%;
+    }
 }
 
 nav ul li a.active {
@@ -197,9 +279,27 @@ nav ul li a.active {
     background-color: #111;
     color: #fff;
 }
-#activity-result {
+#activity-result,
+#check-fibo-result,
+#golden-ratio-result {
     margin-top: 20px;
     font-size: 1.2em;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#activity-result.hidden,
+#check-fibo-result.hidden,
+#golden-ratio-result.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-weight: bold;
 }
 
 /* Estilos para el cuestionario (quiz) */
