@@ -39,6 +39,22 @@
                 <div id="activity-result"></div>
             </div>
 
+            <div class="activity-box">
+                <h3>Comprobador de Fibonacci</h3>
+                <p>Introduce un número para comprobar si pertenece a la secuencia de Fibonacci:</p>
+                <input type="number" id="checkFiboInput" min="0" placeholder="Ej. 21">
+                <button onclick="comprobarFibonacci()">Comprobar</button>
+                <div id="check-fibo-result"></div>
+            </div>
+
+            <div class="activity-box">
+                <h3>Aproximación del Número Áureo</h3>
+                <p>Genera la aproximación al Número Áureo calculando el cociente entre dos números de Fibonacci consecutivos a partir de N términos:</p>
+                <input type="number" id="goldenRatioInput" min="2" max="1000" placeholder="Ej. 15 (min 2)">
+                <button onclick="aproximarNumeroAureo()">Calcular</button>
+                <div id="golden-ratio-result"></div>
+            </div>
+
             <div class="activity-box" id="spiral-activity">
                 <h3>Generador de la Espiral de Durero</h3>
                 <p>Configura el número de iteraciones para dibujar la espiral logarítmica. Observa cómo se van añadiendo los rectángulos áureos que forman este patrón natural.</p>
@@ -225,6 +241,61 @@
             let a = 0, b = 1, temp;
             for (let i = 2; i <= n; i++) { temp = a + b; a = b; b = temp; }
             resultDiv.innerHTML = `El número de Fibonacci en la posición <strong>${n}</strong> es:<br><span style='font-size: 1.5em; color: #fcdb00; text-shadow: 1px 1px 2px #000;'>${n === 0 ? 0 : (n === 1 ? 1 : b)}</span>`;
+        }
+
+        function esCuadradoPerfecto(x) {
+            let s = parseInt(Math.sqrt(x));
+            return (s * s === x);
+        }
+
+        function comprobarFibonacci() {
+            const num = parseInt(document.getElementById('checkFiboInput').value);
+            const resultDiv = document.getElementById('check-fibo-result');
+            if (isNaN(num) || num < 0) {
+                resultDiv.innerHTML = "<span style='color:red;'>Por favor, introduce un número válido (0 o mayor).</span>";
+                return;
+            }
+
+            // Un número pertenece a Fibonacci si y solo si 5*N^2 + 4 o 5*N^2 - 4 es un cuadrado perfecto
+            const isFib = esCuadradoPerfecto(5 * num * num + 4) || esCuadradoPerfecto(5 * num * num - 4);
+
+            if (isFib) {
+                resultDiv.innerHTML = `¡Sí! <span style='font-weight:bold; color: #4CAF50;'>${num}</span> ES un número de Fibonacci.`;
+            } else {
+                resultDiv.innerHTML = `No, <span style='font-weight:bold; color: #f44336;'>${num}</span> NO es un número de Fibonacci.`;
+            }
+        }
+
+        function aproximarNumeroAureo() {
+            const n = parseInt(document.getElementById('goldenRatioInput').value);
+            const resultDiv = document.getElementById('golden-ratio-result');
+
+            if (isNaN(n) || n < 2) {
+                resultDiv.innerHTML = "<span style='color:red;'>Se necesitan al menos 2 términos para calcular una aproximación.</span>";
+                return;
+            }
+
+            let a = 0, b = 1, temp;
+            for (let i = 2; i <= n; i++) {
+                temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            const prev = a;
+            const current = b;
+
+            if (prev === 0) return;
+
+            const approx = current / prev;
+            const phi = 1.6180339887;
+
+            resultDiv.innerHTML = `
+                Secuencia generada hasta: <strong>${current}</strong><br>
+                Dividiendo: ${current} / ${prev}<br>
+                Aproximación calculada: <span style='font-weight:bold; color: #fcdb00;'>${approx.toFixed(10)}</span><br>
+                Valor real de Phi: <span style='font-weight:bold;'>${phi}...</span>
+            `;
         }
 
         function evaluarQuiz() {

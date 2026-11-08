@@ -197,7 +197,9 @@ nav ul li a.active {
     background-color: #111;
     color: #fff;
 }
-#activity-result {
+#activity-result,
+#check-fibo-result,
+#golden-ratio-result {
     margin-top: 20px;
     font-size: 1.2em;
 }
